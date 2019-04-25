@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Paths to Kenya</name>
+    <Style id="icon-1899-0288D1-nodesc-normal">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>0</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <Style id="icon-1899-0288D1-nodesc-highlight">
+      <IconStyle>
+        <color>ffd18802</color>
+        <scale>1</scale>
+        <Icon>
+          <href>http://www.gstatic.com/mapspro/images/stock/503-wht-blank_maps.png</href>
+        </Icon>
+        <hotSpot x="32" xunits="pixels" y="64" yunits="insetPixels"/>
+      </IconStyle>
+      <LabelStyle>
+        <scale>1</scale>
+      </LabelStyle>
+      <BalloonStyle>
+        <text><![CDATA[<h3>$[name]</h3>]]></text>
+      </BalloonStyle>
+    </Style>
+    <StyleMap id="icon-1899-0288D1-nodesc">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#icon-1899-0288D1-nodesc-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-01579B-13594-normal">
+      <LineStyle>
+        <color>ff9b5701</color>
+        <width>13.594</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-01579B-13594-highlight">
+      <LineStyle>
+        <color>ff9b5701</color>
+        <width>20.391</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-01579B-13594">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-01579B-13594-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-01579B-13594-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-097138-13594-normal">
+      <LineStyle>
+        <color>ff387109</color>
+        <width>13.594</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-097138-13594-highlight">
+      <LineStyle>
+        <color>ff387109</color>
+        <width>20.391</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-097138-13594">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-097138-13594-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-097138-13594-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-673AB7-13013-normal">
+      <LineStyle>
+        <color>ffb73a67</color>
+        <width>13.013</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-673AB7-13013-highlight">
+      <LineStyle>
+        <color>ffb73a67</color>
+        <width>19.5195</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-673AB7-13013">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-673AB7-13013-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-673AB7-13013-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-A52714-14175-normal">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>14.175</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-A52714-14175-highlight">
+      <LineStyle>
+        <color>ff1427a5</color>
+        <width>21.2625</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-A52714-14175">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-A52714-14175-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-A52714-14175-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-F57C00-14563-normal">
+      <LineStyle>
+        <color>ff007cf5</color>
+        <width>14.563</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-F57C00-14563-highlight">
+      <LineStyle>
+        <color>ff007cf5</color>
+        <width>21.8445</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-F57C00-14563">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-F57C00-14563-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-F57C00-14563-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Style id="line-FFEA00-14175-normal">
+      <LineStyle>
+        <color>ff00eaff</color>
+        <width>14.175</width>
+      </LineStyle>
+    </Style>
+    <Style id="line-FFEA00-14175-highlight">
+      <LineStyle>
+        <color>ff00eaff</color>
+        <width>21.2625</width>
+      </LineStyle>
+    </Style>
+    <StyleMap id="line-FFEA00-14175">
+      <Pair>
+        <key>normal</key>
+        <styleUrl>#line-FFEA00-14175-normal</styleUrl>
+      </Pair>
+      <Pair>
+        <key>highlight</key>
+        <styleUrl>#line-FFEA00-14175-highlight</styleUrl>
+      </Pair>
+    </StyleMap>
+    <Placemark>
+      <name>Kenya</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          37.906193,-0.023559,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>Mozambique</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          35.5295619999999,-18.665695,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Makonde</name>
+      <description><![CDATA[The Makonde community were brought to Kenya from Mozambique in the late 1930s by the British Empire to work the sugar cane fields as field laborers in what's now known as Kwale County on the southeastern coast of Kenya. They entered the country through the Tanzanian-Kenyan border. Today they still live in Kwale County.<br><br>Status: Gained citizenship in 2016]]></description>
+      <styleUrl>#line-01579B-13594</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          35.5986435,-17.4974626,0
+          37.8837997,0.1976768,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Tanzania</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          39.7449978,-5.4495989,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Pemba</name>
+      <description><![CDATA[The Pemba are said to have come to Kenya as early as the 1930s and settled there for fishing. At the time, the part of the coast where the Pemba settled, popularly known as the ten-mile strip, was part of the Sultanate of Zanzibar and therefore under the sovereignty of the Sultan of Zanzibar and not the British. The Pemba were technically in the same territory as Pemba island where they had come from.<br><br> This part was officially known as the Protectorate of Kenya. The British ruled inland Kenya and this was known as the Colony of Kenya. As the British ceded sovereignty over inland Kenya for independence in 1963, so did the Sultanate of Zanzibar over the ten-mile strip. Kenya then became a country made of the colony and the protectorate and the Pemba were no longer in the Sultanate of Zanzibar but in the newly formed Kenya. <br><br>They were not granted citizenship under the country's first post-independence constitution because only indigenous Kenyans were granted citizenship. Today, the Pemba live in Kwale and Kilifi counties along Kenya's southeastern coast.<br><br>Status: Stateless]]></description>
+      <styleUrl>#line-A52714-14175</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          39.7579664,-5.0015869,0
+          37.8463453,0.3753468,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Burundi</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          29.9188859999999,-3.373056,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Rundi</name>
+      <description><![CDATA[The Rundi came to Kenya from Burundi, to work the sugar cane farms for the British Empire in the 1940s, according to Wanja Munaita with The Office of the United Nations High Commissioner for Refugees. They traveled through Tanzania and entered the country through Kwale County on the southeastern coast of Kenya. Today, many Rundi still live in that region, in addition to some Rundi who have come since then as refugees from conflicts in Burundi.<br><br>Status: Stateless]]></description>
+      <styleUrl>#line-097138-13594</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          30.1504737,-2.9906526,0
+          37.6651222,0.3478301,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>South Sudan</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          31.3069788,6.8769919,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Nubians</name>
+      <description><![CDATA[The Nubians of what is known as Sudan were brought to Kenya after being conscripted into the British Army. In the British Army, they were part of what came to be known as the King's African Rifles during British colonization of East Africa and World War I & II. When they were decommissioned in Kenya, they were given small parcels of land for farming, but no substantive compensation. They mostly live in Kibera, now part of Nairobi, where farm land they received was located.<br><br>Status: Mixed – Some of have citizenship, some do not. Some of whom have citizenship have to undergo vetting that other Kenyans do not in order to obtain identifying documents, "such as requiring parents to provide fingerprints or to escort their adult children when applying for identity cards and passports," according to a 2018 report from The Office of the United Nations High Commissioner for Refugees.]]></description>
+      <styleUrl>#line-FFEA00-14175</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          31.5406262,7.1102994,0
+          37.8463453,0.3753468,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Rwanda</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          29.873888,-1.940278,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Rwandese</name>
+      <description><![CDATA[The Rwandese who are stateless in Kenya are the descendants of an estimated 500 people who were brought to Kenya from Rwanda by the British Empire in the 1940s. They were brought to work tea plantations in Kericho. In 2017, they petitioned the Rwanda High Commissioner to Kenya for Kenyan citizenship.<br><br>Status: Stateless]]></description>
+      <styleUrl>#line-673AB7-13013</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          30.1455052,-1.5563213,0
+          37.8463453,0.3753468,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Zimbabwe</name>
+      <styleUrl>#icon-1899-0288D1-nodesc</styleUrl>
+      <Point>
+        <coordinates>
+          31.6593595,-20.3023653,0
+        </coordinates>
+      </Point>
+    </Placemark>
+    <Placemark>
+      <name>The Shona</name>
+      <description><![CDATA[The Shona community migrated to Kenya in the 1960s. Initially they were welcome, a group of 100 Christian missionaries working on behalf of the Gospel of God Church, by Kenya's first President Jomo Kenyatta. His government allowed them to establish a church, but they were not granted citizenship under the country's first post-independence constitution because only indigenous Kenyans were granted citizenship. Today, many Shona live in Nairobi, Kenya's capital.<br><br>Status: Stateless]]></description>
+      <styleUrl>#line-F57C00-14563</styleUrl>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          31.862198,-19.475695,0
+          37.8963208,0.4168781,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+  </Document>
+</kml>

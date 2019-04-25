@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Neuton|Open+Sans|Spectral|Ubuntu+Condensed" rel="stylesheet">
-
+  <link href="js/leaflet/leaflet.css" rel="stylesheet">
   <!-- Twitter data -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:creator" content="@">
@@ -109,7 +109,7 @@
           transform:translateX(-50%);
       }
 */
-      
+      #map{height:70vh;}
       .background-video{
           width: 100%;
           height: auto;
@@ -131,14 +131,15 @@
            data-2000="transform:translateY(1000px);opacity:0;"
       ></div>
 -->
-      <div id="hero1"></div>
+      <div id="hero1" data-anchor-target="#byline" data-center="opacity:1;" data--200-center="opacity:0;"></div>
       <div id="hero2" 
            data-0="transform:scale(1);opacity:1;" 
-           data-1000="transform:scale(2));opacity:0;"
+           data-1000="transform:scale(2);opacity:0;"
       ></div>
       <div id="hero3"
-           data-1000="transform:translateX(500px);opacity:0;" 
-           data-2000="transform:translateX(-300px));opacity:1;"
+           data-1000="transform:translateX(500px);opacity:0;display:block;" 
+           data-2000="transform:translateX(-300px);opacity:1;"
+           data-2200="display:none;"
            ><h1>A Search for Belonging</h1>
             <h4>One Community’s Struggle <br>
                 to Gain Citizenship</h4>
@@ -151,7 +152,7 @@
     <div class="row justify-content-center">
       <div class="col-12">
 
-        <p class="byline">By Carlos Mureithi, Drew Costley and Amy Mostafa</p>
+        <p id="byline" class="byline">By Carlos Mureithi, Drew Costley and Amy Mostafa</p>
         <!--Scroll a bit before reaching the body text-->
 
         <!-- start of body text -->
@@ -262,8 +263,8 @@
 
         <!-- Example of map embed -->
         <div class="embed-responsive embed-responsive-4by3">
-          <div class="map">
-            <iframe class="embed-responsive-item" src="https://public.carto.com/viz/397fd294-a82b-4470-90cc-6153ebad5bf6/embed_map" width="640" height="360" frameborder="0" allow="fullscreen" allowfullscreen></iframe>
+          <div id="map" class="map">
+              
           </div>
         </div>
       </div><!-- closes .col12 etc -->
@@ -658,9 +659,10 @@
   </div>
 
   <div>
-    <script src="js/jquery-3.3.1.slim.min.js"></script>
+    <script src="js/jquery-3.4.0.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/skrollr.min.js"></script>
+    <script src="js/leaflet/leaflet.js"></script>
     <script>
       //initiate skrollr
       var s = skrollr.init();
@@ -676,7 +678,83 @@
           var modal = $(this);
           modal.find('.modal-body').html('<img src="' + recipient + '" class="img-fluid d-block">');
         });
+          
+          
+        /****************
+        
+        THIS IS WHERE YOU CAN EDIT THE MAP LAYERS.
+        
+        ADJUST COLOR, WEIGHT (THICKNESS OF LINE) OR OPACITY
+        
+        ****************/          
+          
+        var mapLineStyle = function(feature) { 
+            switch (feature.properties.Name) {
+                case 'The Makonde' : return {color: "#ff0000", weight: 6, opacity: 1 };
+                case 'The Pemba'   : return {color: "#0000ff", weight: 6, opacity: 1 };
+                case 'The Rundi'   : return {color: "#0000ff", weight: 6, opacity: 1 };
+                case 'The Nubians' : return {color: "#ff0000", weight: 6, opacity: 1 }; 
+                case 'The Rwandese': return {color: "#0000ff", weight: 6, opacity: 1 }; 
+                case 'The Shona'   : return {color: "#0000ff", weight: 6, opacity: 1 }; 
+            }
+        }
+        
+        //style for all the markers (circles). Radius is the size.
+        var geojsonMarkerOptions = {
+            radius: 8,
+            fillColor: "#ff0000",
+            color: "#000",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 1
+        };
+        
+        //It might be possible to modify this code below
+        //so that each marker looks different. 
+        var mapMarkerStyle = function (feature, latlng) {
+            switch (feature.properties.Name) {
+                case 'Kenya'       : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Mozambique'  : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Tanzania'    : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Burundi'     : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'South Sudan' : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Rwanda'      : return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Zimbabwe'    : return L.circleMarker(latlng, geojsonMarkerOptions);
+            }
+        }
+        
 
+
+        
+        function onEachFeature(feature, layer) {
+            // does this feature have a property named popupContent?
+            if (feature.properties && feature.properties.Description) {
+                layer.bindPopup(feature.properties.Description).bindTooltip(feature.properties.Name);
+            }
+        }
+          
+        //leaflet code
+        var leafletMap = L.map('map',{scrollWheelZoom: false}).setView([-5.769513,36.032715], 5);
+          
+        var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+            attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains: 'abcd',
+            minZoom: 0,
+            maxZoom: 20,
+            ext: 'png'
+        }).addTo(leafletMap);
+          
+        $.ajax({
+            url: "maps/pathstokenya.json",
+            dataType: "json"
+        }).done(function(data){
+            L.geoJSON(data,{
+                style: mapLineStyle,
+                pointToLayer: mapMarkerStyle,
+                onEachFeature: onEachFeature
+            }).addTo(leafletMap);
+        });
+        
 
       });
 

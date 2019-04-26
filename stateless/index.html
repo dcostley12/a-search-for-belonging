@@ -44,7 +44,7 @@
         top: 50px; 
         right: 100px; 
         z-index: -5;
-        font-family: "ubuntu,;
+        font-family: "neuton";
       }
       
       #h1{ 
@@ -75,7 +75,7 @@
 
     .byline {
       font-family: "Spectral";
-      font-size: 30px;
+      font-size: 25px;
       text-align: center;
     }
 
@@ -109,7 +109,10 @@
           transform:translateX(-50%);
       }
 */
-      #map{height:70vh;}
+      #map{height: 100vh;
+    
+    }
+    
       .background-video{
           width: 100%;
           height: auto;
@@ -262,14 +265,14 @@
       <div class="col-12">
 
         <!-- Example of map embed -->
-        <div class="embed-responsive embed-responsive-4by3">
+      
           <div id="map" class="map">
               
           </div>
         </div>
       </div><!-- closes .col12 etc -->
     </div><!-- closes .row.justify-content-center -->
-  </div>
+
 
   <div class="container mt-5">
     <div class="row justify-content-center">
@@ -311,7 +314,7 @@
   </figure>
   <!--Fourth section (What it means to be stateless)-->
   <div class="container mt-5">
-    <div class="row justify-content-center">
+      <div class="row justify-content-center">
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
         <p class="p4">One hot afternoon in January, Omar Hamisi, a 55-year-old stateless man from the Pemba community that is originally from present-day Tanzania, stands gently at a fish shop right next to a road in Watamu, a small coastal town and tourist resort in Kenya’s southeast. In a creamy taqiyah – a Muslim skullcap – grey shorts and brown, dusty open shoes, he is waiting for customers. Just outside the shop, a roughly built structure made of corrugated iron and wood, is Hamisi’s son Sharif Kombo, a cheeky boy in a blue T-shirt and two wristbands on his left arm. It is a Wednesday, a school day, but Kombo is not in school. Instead, he is swiftly scaling fish and cutting them into pieces at this shop where his father sells fish, amid the noise of tuk-tuks and other vehicles passing by.
         </p>
@@ -350,6 +353,14 @@
           </figure>
         </div>
 -->
+  <div class="container-fluid mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12">
+<iframe frameborder="0" class="juxtapose" width="100%" height="6250" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3d9bcd7c-6875-11e9-8106-0edaf8f81e27"></iframe>
+    </div>
+      </div><!-- closes .col12 etc -->
+    </div>
+  
   <div class="container mt-5">
     <div class="row justify-content-center">
       <div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -690,21 +701,21 @@
           
         var mapLineStyle = function(feature) { 
             switch (feature.properties.Name) {
-                case 'The Makonde' : return {color: "#ff0000", weight: 6, opacity: 1 };
-                case 'The Pemba'   : return {color: "#0000ff", weight: 6, opacity: 1 };
-                case 'The Rundi'   : return {color: "#0000ff", weight: 6, opacity: 1 };
-                case 'The Nubians' : return {color: "#ff0000", weight: 6, opacity: 1 }; 
-                case 'The Rwandese': return {color: "#0000ff", weight: 6, opacity: 1 }; 
-                case 'The Shona'   : return {color: "#0000ff", weight: 6, opacity: 1 }; 
+                case 'The Makonde' : return {color: "#b2182b", weight: 6, opacity: 1 };
+                case 'The Pemba'   : return {color: "#ef8a62", weight: 6, opacity: 1 };
+                case 'The Rundi'   : return {color: "#fddbc7", weight: 6, opacity: 1 };
+                case 'The Nubians' : return {color: "#d1e5f0", weight: 6, opacity: 1 }; 
+                case 'The Rwandese': return {color: "#67a9cf", weight: 6, opacity: 1 }; 
+                case 'The Shona'   : return {color: "#2166ac", weight: 6, opacity: 1 }; 
             }
         }
         
         //style for all the markers (circles). Radius is the size.
         var geojsonMarkerOptions = {
             radius: 8,
-            fillColor: "#ff0000",
-            color: "#000",
-            weight: 1,
+            fillColor: "#fff",
+            color: "#36454f",
+            weight: 2,
             opacity: 1,
             fillOpacity: 1
         };

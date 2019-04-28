@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="en">
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=EB+Garamond|Neuton|Open+Sans|Spectral|Ubuntu+Condensed" rel="stylesheet">
+  <link rel="stylesheet" href="css/flickity.min.css">
+  <link href="js/leaflet/leaflet.css" rel="stylesheet">
+
+
+  <!-- Twitter data -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:creator" content="@">
+  <meta name="twitter:title" content="">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:image" content="">
+
+  <!-- Open Graph (facebook and others) data -->
+  <meta property="og:title" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="" />
+  <style>
+    #hero1,
+    #hero2 {
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    /* Shaame */
+    #hero1 {
+      background-image: url(photos/shaameboat.jpg);
+      z-index: -10;
+    }
+
+    /* Kenyan flag */
+    #hero2 {
+      background-image: url(photos/kenyaflag.png);
+    }
+
+    /* Title text */
+    #hero3 {
+      position: fixed;
+      top: 100px;
+      right: 100px;
+      transform: translate(500px, -50%);
+      z-index: -5;
+      font-family: Neuton, sans-serif;
+    }
+
+    #byline {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -52%);
+      width: 100vw;
+      height: 100px;
+      text-align: center;
+      z-index: -15;
+      visibility: hidden;
+    }
+
+    #byline-container {
+      width: 100vw;
+      height: 200vh;
+      position: relative;
+    }
+
+    #h1 {
+      font-size: 100;
+    }
+
+    #h2 {
+      font-size: 50;
+    }
+
+
+    p {
+      font-family: "EB Garamond";
+      color: white;
+      font-size: 20px;
+    }
+
+    body {
+      background-color: black;
+    }
+
+    .byline {
+      font-family: "Spectral", sans-serif;
+      font-size: 25px;
+      text-align: center;
+    }
+
+    hr {
+      display: block;
+      margin-top: 0.5em;
+      margin-bottom: 0.5em;
+      margin-left: auto;
+      margin-right: auto;
+      border-style: inset;
+      border-width: 1px;
+      width: 500px;
+      align-items: center;
+    }
+
+    figcaption {
+      color: dimgrey;
+    }
+
+    /*
+      .full-background-video-container{
+            position: relative;
+          height: 80vh;
+          overflow: hidden
+      }
+      
+      .full-background-video{
+          position: absolute;
+          top:0;
+          left: 50%;
+          transform:translateX(-50%);
+      }
+      */
+    #map {
+      height: 100vh;
+    }
+
+    .background-video {
+      width: 100%;
+      height: auto;
+    }
+
+    .juxtapose {
+      width: 100vw;
+      height: 80vw;
+    }
+
+    .carousel-cell {
+      width: 100%;
+      overflow: hidden;
+    }
+
+
+    h3 {
+      font-family: "Neuton", sans-serif;
+      color: white;
+    }
+
+    h6 {
+      font-family: "EB Garamond";
+      color: white;
+      font-style: italic;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Main header -->
+  <header>
+    <div class="herobox">
+
+      <!-- Shaame on boat -->
+      <div id="hero1" data-0="opacity:1;" data-500="opacity:1;" data-800="opacity:0;"></div>
+
+      <!-- Kenyan Flag -->
+      <div id="hero2" data-0="transform:scale(1);opacity:1;" data-500="transform:scale(2);opacity:0;"></div>
+
+      <!-- Title text -->
+      <div id="hero3" data-200="transform:translateX(500px);opacity:0;display:block;" data-500="transform:translateX(0px);opacity:1;" data-750="display:none;">
+        <h1>A Search for Belonging</h1>
+        <h4>One Community’s Struggle <br>to Gain Citizenship</h4>
+      </div>
+    </div>
+  </header>
+
+  <div id="skrollr-body">
+    <div id="byline-container">
+      <div id="byline" data-anchor-target="#text-start" data-200-center-top="position:fixed;top:!50%;bottom:auto;" data-175-center-top="position:absolute;top:auto;bottom:!0;">
+        <p class="byline">By Carlos Mureithi, Drew Costley and Amy Mostafa</p>
+      </div>
+    </div>
+    <hr>
+
+    <div id="text-start" class="container-fluid mt-5">
+      <div class="row align-items-start">
+        <div class="col-3">
+          <svg class="pl-2 align-self-start" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 287.33 1020.87" width="100%" height="100%" preserveAspectRatio="xMidYMin slice">
+            <defs>
+              <style>
+                .cls-1 {
+                  fill: none;
+                  stroke: #ba0000;
+                }
+
+                .cls-1,
+                .cls-4 {
+                  stroke-miterlimit: 10;
+                  stroke-width: 8px;
+                }
+
+                .cls-2 {
+                  font-size: 24px;
+                  fill: #fff;
+                  font-family: Avenir-Black, Avenir;
+                }
+
+                .cls-3 {
+                  letter-spacing: -0.02em;
+                }
+
+                .cls-4 {
+                  stroke: #fff;
+                }
+              </style>
+            </defs>
+            <title>mapline</title>
+            <g id="Layer_2" data-name="Layer 2">
+              <path class="cls-1" stroke-dasharray="1100,1100" stroke-dashoffset="1100" data-bottom-center="stroke-dashoffset:1100px;" data-300-top-bottom="stroke-dashoffset:0px;" d="M475.17,108.16c3.6,2.84,8.91,7.88,11.49,15.52,4,11.89-2.55,18.27.82,32.44,1.44,6.07,2.58,4.62,10.52,20.82,6.54,13.35,9.81,20,11.23,27.18,2.94,14.81-.62,27.57-2.47,33.91-4.82,16.58-10.48,16.55-11.46,29.42-.82,10.66,2,24.69,2,24.92a84.36,84.36,0,0,0-3.37,20.34c-.7,17,4,30.13,7.68,40.31,1.58,4.33.59,1,11.45,25,0,0,2.71,6,14.71,32.92C548.21,429,555.28,446,558,454.8a212.46,212.46,0,0,1,6.65,32.57c.72,5.6.81,8,2.15,19.09,2.25,18.57,2.6,16.74,3.09,23.23a184.75,184.75,0,0,1-1.53,38,70.33,70.33,0,0,0,1.71,23.54c.95,3.77,1.74,5.52,8.6,22,5.22,12.53,7.84,18.82,8.29,20.6,1.05,4.16,1.12,6.14,2.11,28.52.77,17.58.85,19,1.39,22.16,2.37,13.65,5.82,14.73,6.69,23.14.32,3.11.47,8.91-12.44,34.72-12,24-14.53,23.8-17.42,35.12s-4.54,27.7-4.57,27.86a43.58,43.58,0,0,1,10.42,17.21c3.34,10.77-.78,13.94,1,26.61,2,14.84,9.95,27.18,14.17,33.77,3.56,5.55,6.15,8.4,9.27,15.3A81.93,81.93,0,0,1,603,915.87c2.89,12.28,9.23,20.74,18.31,32.83,21.18,28.21,39.84,30.73,38.52,42-.71,6.1-8.53,11.21-24.15,21.42-15,9.78-22.49,11.2-27.22,20.67-.77,1.54-5.08,10.17-1.77,17.8,2.1,4.82,5.28,4.74,11.93,11.07,7.32,7,5.14,8.68,13.5,18a147.23,147.23,0,0,0,15.63,14.59l-9.6,15.23" transform="translate(-460.67 -94.1)" />
+            </g>
+            <g id="Layer_1" data-name="Layer 1"><text class="cls-2" transform="translate(44.86 21.27)">Nai<tspan class="cls-3" x="38.69" y="0">r</tspan>
+                <tspan x="48.02" y="0">obi</tspan>
+              </text><text class="cls-2" transform="translate(210.86 1009.27)">Kwale</text>
+              <circle class="cls-4" cx="477.17" cy="110.61" r="12.5" transform="translate(-331.6 361.11) rotate(-57.76)" />
+              <circle class="cls-4" cx="646.09" cy="1098.47" r="12.5" transform="translate(-1088.36 964.89) rotate(-57.76)" />
+            </g>
+          </svg>
+        </div>
+        <div class="col-9 col-sm-6">
+          <!--First section (Intro / opening scene)-->
+          <p>
+            One sunny morning last October, more than 300 people assembled under the shade of trees on a field in a village on Kenya’s coast, many of them elderly and many of them in red T-shirts written “Ugeni huu mwisho lini?” (When will we stop being treated as visitors?). These were stateless people and human rights activists. Just two months before, the deadline to register stateless people as citizens had lapsed, but their status was still the same because the government had not completed the process. After decades of distress, the Pemba, Makonde, Rundi and Rwandese communities had had enough. They had decided to travel 300 miles, partly on foot, from Makongeni village in Kwale county to the president’s residence in the country’s capital Nairobi to seek audience with him. This was their last, desperate resort in their struggle to be recognized as Kenyans so they could obtain nationality documents to enable them to live normal lives and enjoy the same rights as Kenyans.
+          </p>
+          <p>
+            A senior government official, Nelson Marwa, asked them not to embark on the trek because the government would address the problem, but they stood firm. Under a blue sky, they said a prayer, then set off for Nairobi, with two police vehicles ahead of them to clear the road. The trekkers had nine buses nearby to carry them for some parts of the journey such as places with dangerous wildlife. They planned to complete the walk in three days, spending nights in towns along the way.
+          </p>
+          <p>
+            Some sixteen miles into the journey, a group of government administrators stopped the procession and asked them to meet with Marwa in a village hall. They refused and continued with the walk. Human rights activists had to hide Thomas Nguli, a vocal chairman of the Makonde community, in one of their cars as they feared police would detain him as a strategy to stop the procession. After a couple of miles, senior police officers ordered the trekkers to wait for Marwa. He came an hour later and told them the government was addressing their problem and he tried to persuade them to abandon their plan. The statelessness issue would be discussed in the next cabinet meeting, which would probably take place the following week, he said. The stateless people could hear none of it. Nguli, who was the face of the walk, told Marwa officials in the capital had been frustrating their efforts and they had been left with no option but to seek audience with the president. Marwa allowed them to go, but he threatened to withdraw security. They proceeded with their journey.
+          </p>
+          <p>
+            When the people reached Voi the following day, a town one hundred miles from their starting point, police detained them and confiscated their buses for more than two hours at night without an explanation. The trekkers caused a scene, surrounding the station and preventing people from accessing services. This attracted the attention of the head of the police station, who spoke with them then then let them go.
+          </p>
+        </div>
+      </div>
+    </div>
+    <figure>
+      <img src="photos/300-mile-walk-2016.jpg" class="img-fluid d-block">
+      <figcaption>Stateless people march to Kenya's State House in Nairobi in 2016. (Photo: Courtesy of the Kenya Human Rights Commission) </figcaption>
+    </figure>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <p>
+            Three days after leaving Kwale, the trekkers, weary from their journey, arrived in Nairobi. They walked peacefully on the streets of the city centre, singing, dancing, chanting and holding up placards, only to be met with the scary sight of anti-riot police and trucks ready to prevent their march to State House, the president’s residence. They were men in blue uniform wearing helmets and with teargas canisters on their waists and batons in their hands. After deliberations and confrontation with Nguli and human rights officials, a senior police officer told the trekkers they could not go to State House. He eventually said they should go to a park where the security minister, Joseph Nkaissery, would address them.
+          </p>
+          <p>
+            “You’ve reached Nairobi. You can’t go back without seeing the president,” Nkaissery told the stateless people in Swahili. The president had asked him to come get them and take them to State House, he said. They stateless people were overcome with joy. Mustering whatever energy they had left after the draining walk, they clapped and pumped fists in the air. Now filled with hope, they boarded their buses and headed to the president’s house in a convoy escorted by police.
+          </p>
+          <p>
+            At State House, around 200 stateless people and human rights advocates were allowed in while the rest stayed outside. In the meeting room with President Uhuru Kenyatta, a sea of red T-shirts and expectant faces, among the stateless, only representatives of the Makonde community were given a chance to speak: Nguli and the community’s chairperson, Amina Kassim. Then the president gave a speech. He told Nkaissery and the head of registration, Reuben Kimotho, to make sure the Makonde got national IDs by December. There was no mention of the other stateless communities, despite them being in the room and having been part of the convoy.
+            <p>
+              For the Makonde, it was the news they had been waiting for their entire lives. The Pemba and the Rundi were devastated.
+            </p>
+            <p>
+              “We did not know what to do,” Shaame Hamisi, a Pemba, said in Swahili in his house in Kwale last December.
+            </p>
+            <p>
+              The government did not have enough capacity to address statelessness among all the communities in 2016, says Alexander Muteshi, the head of Kenya’s state department for issuance of citizenship.
+            </p>
+            <p>
+              In February 2017, President Kenyatta issued the Makonde with national IDs at a ceremony in Kwale. The Pemba, Rundi and other stateless communities in the country remained stateless. “We are just continuing to suffer,” Hamisi says.
+            </p>
+        </div>
+      </div>
+    </div>
+    <!-- VIDEO EXAMPLE -->
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <!-- video embed: this will be where our explainer goes -->
+          <div class="explainer embed-responsive embed-responsive-16by9 full-screen">
+            <iframe src="https://player.vimeo.com/video/332154793" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <!--Second section (Nut grafs / Why this is important)-->
+          <p class="p3">In Kenya and other parts of the world, gaps in nationality laws have rendered people stateless, that is, unable to be recognized as citizens of any country. Stateless people are deprived of rights and privileges that citizens of the countries they live in enjoy. They may have difficulty accessing basic rights such as education, healthcare, employment and freedom of movement. Usually, they cannot go to school, see a doctor, get a job, open a bank account, buy a house, move freely or get married legally. People also become stateless because of discriminatory laws, the emergence of new states and changes in borders, and the loss or deprivation of nationality. “Statelessness is really a big man-made problem,” says Wanja Munaita of UNHCR Kenya.
+          </p>
+          <p>
+            Statelessness is a global problem. There are an estimated 12 million stateless people in the world. More than one million of them are the Rohingya from Myanmar in southeast Asia, and an estimated 700,000 live in Ivory Coast in West Africa. More than three quarters of stateless people belong to minority groups. Without proper nationality laws and policies, statelessness will become an ever larger dilemma in the years and decades to come.
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <!--Third section (Historical background / How we got here)-->
+          <p class="p3">In Kenya, a country that has an estimated 18,500 stateless people, the roots of statelessness go back to the days of British colonialism and laws that discriminated against people who are not indigenous Kenyans. Before colonialism and the drawing of boundaries and the creation of states, Africans were mainly identified by the ethnic groups they belonged to and these communities were not necessarily confined to boundaries, says Prof Hassan Mwakimako of Pwani University in Kilifi, Kenya. They freely moved around for trade and other reasons without official restriction.
+          </p>
+          <p>
+            But when Kenya got independence in 1963, its new constitution allowed citizenship for people born in Kenya but it also required Kenyan parental heritage. People who had been born in Kenya or were residing there but could not prove their their indigenous link to the country were given two years to apply for registration as citizens if they qualified under some conditions. While many people took up this opportunity, mostly those of South Asian descent, not many Africans did, hence becoming stateless and passing their status on to their descendants. The African communities got little information about the registration, Munaita says. She adds that lack of education, and their location far from the capital Nairobi could have also been factors in getting insufficient information.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+
+    <div class="mapheadcontainer">
+      <div class="container-fluid mt-5">
+        <div class="row justify-content-right">
+          <div class="col-12">
+            <h3> Where Kenya's stateless and formerly stateless came from</h3>
+            <h6> Click on the different paths from countries in East Africa to Kenya to find out where the people of kenya'sd different stateless and formerly stateless communities originate. </h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <!-- Example of map embed -->
+          <div id="map" class="map">
+          </div>
+        </div>
+      </div><!-- closes .col12 etc -->
+    </div><!-- closes .row.justify-content-center -->
+    <br>
+    <br>
+    <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <p>In 2010, Kenya adopted a new constitution that provided a framework for the registration of stateless people as citizens. This led to creation of a law in 2011 that called for the registration of stateless people within five years – by August 30, 2016. By the end of that five-year window, the government had not registered a single stateless person, leading to the walk that helped the Makonde get citizenship.
+          </p>
+          <p>
+            A day after the 2016 walk started, the government made a backdated three-year extension of the first deadline – to August 2019.
+          </p>
+          <p>
+            The process of registering stateless people involves identifying them, carrying out verification, capturing their biometric data, making recommendations about their registration, and subsequently registering them. UNHCR and Haki Centre provide support.
+            <!-- right justified photo, adjusts back for mobile -->
+            <!--
+          <figure class="row justify-content-end">
+            <div class="col-12 col-sm-6 order-sm-1 order-2">
+              <figcaption class="text-sm-right">Here is a caption for the right photo. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </figcaption>
+            </div>
+            <div class="col-12 col-sm-6 order-sm-2 order-1">
+              <img src="assets/placeholder.svg" class="img-fluid d-block">
+            </div>
+          </figure>
+-->
+            <p>
+              Currently, the state department for issuance of citizenship is focusing on registering four communities that are still stateless: the Pemba, the Rundi, the Shona from Zimbabwe and the people of Rwandan descent, Muteshi says. He acknowledges there are others communities, and says they may consider them based on the results of an ongoing survey on statelessness in the country.
+            </p>
+            <p>
+              Since 2011, only 1,496 stateless people – the Makonde – have gotten citizenship. But Muteshi says the state department is on course now and it is banking on an awareness exercise among stateless people and collaboration with other agencies to make the registration a success. However, judging by the time remaining till August and the estimated 18,500 people yet to be registered as citizens, human rights activists say the government has still not done enough this second time and it is bound to fail meet the deadline once again and there may be need for another deadline extension.
+            </p>
+            <p>
+              “I don't have confidence that all stateless persons in the country will be registered,” Munaita says.
+            </p>
+        </div>
+      </div>
+    </div>
+    <figure>
+      <img src="photos/sharif-kombo-2019.JPG" class="img-fluid d-block">
+      <figcaption>Sharif Kombo, a member of the Pemba community, cuts up fish at his father's shop. (Photo: Carlos Mureithi)</figcaption>
+    </figure>
+    <!--Fourth section (What it means to be stateless)-->
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+          <p class="p4">One hot afternoon in January, Omar Hamisi, a 55-year-old stateless man from the Pemba community that is originally from present-day Tanzania, stands gently at a fish shop right next to a road in Watamu, a small coastal town and tourist resort in Kenya’s southeast. In a creamy taqiyah – a Muslim skullcap – grey shorts and brown, dusty open shoes, he is waiting for customers. Just outside the shop, a roughly built structure made of corrugated iron and wood, is Hamisi’s son Sharif Kombo, a cheeky boy in a blue T-shirt and two wristbands on his left arm. It is a Wednesday, a school day, but Kombo is not in school. Instead, he is swiftly scaling fish and cutting them into pieces at this shop where his father sells fish, amid the noise of tuk-tuks and other vehicles passing by.
+          </p>
+          <p>
+            Kombo is a little unwell, hence his absence from school today. He is here to learn how his father’s business works because he may end up doing this work himself in some years to come. Kombo is in the 8th grade, the final year of elementary school in Kenya and a stage where you have to take national exams to proceed to high school. One of the requirements to register for these exams is a birth certificate. Like all stateless people in Kenya, Kombo does not have a birth certificate, so he may not do the exam and his education may end at the 8th grade. He cannot get a birth certificate because in applying for one, his parents would have to provide supporting identity documents showing who they are. But as stateless people, they do not have any.
+          </p>
+          <p>
+            Time is running out for Kombo. The deadline for applying for the national exams is one month away. But rather than watch helplessly as his son gets locked out of education and lives through the same struggles he and five generations of the Pemba have lived in Kenya, Hamisi, a father of six, has a plan: to use a Kenyan friend’s national ID to get a birth certificate for Kombo. He wants to give the ID to a government official who will then corruptly facilitate having the friend’s name written as Kombo’s father in the document. It is something he has done successfully before for two other children of his, using that same man’s national ID. Hamisi understands that legally, these children have now become his friend’s, but biologically, they are his. And he is not proud of using this approach.
+          </p>
+          <p>
+            “I feel very bad because it’s like I’ve given my children to somebody else,” Hamisi says. “Nobody is pleased when their child has somebody else’s name written as their father’s. Nobody. Because, specifically legally, I’ve given my child to someone else.”
+            <p>
+              Kombo is disappointed because unlike his fellow schoolmates who are Kenyan and have birth certificates, and will therefore register for the exams, he does not know whether he will do the exams.
+            </p>
+            <p>
+              “I feel bad because I also want to study, to get a job like other people,” he says. “So that I can improve my life.” But he is aware of his father’s plan and he is hopeful that he will get a birth certificate. Like his father, though, he is not happy they have to use this route. Kombo fears the man whose name would be on the birth certificate may one day claim he is his real father.
+            </p>
+            <p>
+              The practice of using fake fathers to get birth certificates is a trend among stateless people in Kenya who want their children to become Kenyan citizens. A stateless man or woman who gets a child with a Kenyans partner is lucky though as the Kenyan parent can pass on citizenship to the child, hence they can get a birth certificate.
+            </p>
+        </div>
+      </div>
+    </div>
+    <!--Do a Juxtapose here showing how the Pemba got into the situation they're in now-->
+    <!--
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+         align left photo with text wrap 
+        <div class="w-50 mr-4 float-left">
+          <figure>
+            <img src="assets/placeholder.svg" class="img-fluid d-block">
+            <figcaption>Here is a caption for the right photo. </figcaption>
+          </figure>
+        </div>
+-->
+
+    <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+    <div class="mapheadcontainer">
+      <div class="container-fluid mt-5">
+        <div class="row justify-content-right">
+          <div class="col-12">
+            <h3> Where the Pemba lived, before and after colonial rule</h3>
+            <h6> Slide the bar in the middle of the two maps to see how control over the 10-mile "Coastal Strip" and the Zanzibar Archipelago changed after Kenya's independence from the British Empire</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12">
+          <iframe frameborder="0" class="juxtapose" width="100%" height="100%" src="https://cdn.knightlab.com/libs/juxtapose/latest/embed/index.html?uid=3d9bcd7c-6875-11e9-8106-0edaf8f81e27"></iframe>
+        </div>
+      </div><!-- closes .col12 etc -->
+    </div>
+    <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+    <p>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              In a phone call in early April 2019, Hamisi says his plan succeeded, and not just for Kombo, but also for another of his children, Ahmed, a 13-year-old is in the seventh grade. “I have gotten it,” he says. “I am grateful.”
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              The history of how the Pemba ended up in Kenya is a complicated one that is linked to British rule in Kenya and Omani rule in Zanzibar on the Indian Ocean. The Pemba are originally from the eponymous island in the Zanzibar archipelago. They are said to have come to Kenya as early as the 1930s and settled there for fishing. At the time, the part of the coast where the Pemba settled, popularly known as the ten-mile strip, was part of the Sultanate of Zanzibar and therefore under the sovereignty of the Sultan of Zanzibar and not the British. The Pemba were technically in the same territory as Pemba island where they had come from.
+            </p>
+            <p>
+              This part was officially known as the Protectorate of Kenya. The British ruled inland Kenya and this was known as the Colony of Kenya. As the British ceded sovereignty over inland Kenya for independence in 1963, so did the Sultanate of Zanzibar over the ten-mile strip. Kenya then became a country made of the colony and the protectorate and the Pemba were no longer in the Sultanate of Zanzibar but in the newly formed Kenya. “The Pembas are not indigenous to this area that is confined as the state of Kenya,” says Prof Mwakimako of Pwani University.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Sitting at the rear of a small wooden fishing boat, a grey Yamaha motor behind him and his blue shirt puffing from the wind, Shaame Hamisi holds a string with two very small fish, one on top of the other. We are surrounded by the Indian Ocean. The boat rocks gently in the waves. Behind Hamisi, a tall 56-year-old man with a scruffy beard and a bald head, is Wasini Island. “It’s not our fault that we catch such small fish,” Hamisi, who has been fishing for about 30 years, says on the boat.
+            </p>
+            <p>
+              “It’s because of statelessness. Statelessness is a very annoying thing.”
+            </p>
+          </div>
+        </div>
+      </div>
+      <video class="background-video" loop muted autoplay playsinline preload>
+        <source src="loopingvideos/ShaameatSeaLoop.mp4" type="video/mp4">
+      </video>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Hamisi and his two fishing partners are taking us on a short trip to show us how they do their work. It takes a lot of effort and skill for them to catch just one fish, but, after about half an hour and trying a few fishing spots, they succeed. Last night, they fished overnight. Calculating the financial reward of their night-long undertaking later is easy but painful for Hamisi. Fifteen kilograms of fish. That is how much he and his two fellow Pemba fishermen caught together the entire night last night. At a small Swahili restaurant just off the sea on a bright January afternoon, Hamisi, still tired from last night’s work, says one kilo goes for KSh200 ($2). After a long night of fishing, they end up with KSh3,000 ($30). With deductions for renting the fishing boat and for fuel, they are left with about KSh1,000 ($10). Split that among three people. Hamisi has two wives and 14 children.
+            </p>
+            <p>
+              It is a dog’s life for stateless people in Kenya. They lack access to formal jobs because of their low level of education. They cannot legally do business because they lack the national ID, which is needed to get business permits and licences. This makes it very difficult to support their families financially, and lowering their standard of living.
+            </p>
+            <p>
+              You need a licence to fish legally in Kenya. So Hamisi and other members of his community are forced to fish near the coastline to avoid being caught by the military, who do patrols further away. Sometimes, the Pemba fish at night, but still near the coastline. But the nearby waters only have small fish. Moreover, without national identity documents, the Pemba cannot buy and register their own fishing boats or get loans to buy them, so they end up renting them from Kenyans, and this reduces their profits.
+            </p>
+            <p>
+              In Kichaka Mkwaju, a village neighboring Shimoni, sits large swaths of open, almost geometrically shaped areas of sunken light-brown land that are surrounded by trees and bushes. These are quarries. Pemba women, who like their men are locked out of formal jobs because of their low education level, work in these open-pit mines to help support their families. Barefeet, carrying axes and with colorful khangas – traditional Swahili garments – around their waists, they carefully walk down the slopes into a quarry, also crouching and touching the ground to avoid sliding and losing their balance.
+            </p>
+            <p>
+              Once inside, they get hard at work. And it is back-breaking work. Bending over, some women hit the floor of the quarry hard with their axes to break it into pieces of rock. Another group of then collects the rocks and puts them in plastic buckets and basins. Then another group, lined up in ascension to the top of the quarry, carries the buckets and basins and passes them to each other to the top in a synchronized fashion where the rocks are deposited together.
+            </p>
+            <p>
+              They sell one 20-litre bucket of rocks for KSh20 ($0.15).
+            </p>
+            <p>
+              “We mine these rocks, and when we leave here, to be honest, we are really tired,” says Sada Ibrahim, an energetic 50-year-old Pemba woman, at one of the quarries. “Because this work is difficult, and it is difficult! It does not matter if you are a woman or a man.” Ibrahim is holding an ax to her left ear, a khanga wrapped around head and her arms white with dust from showing us how they do the mining. When schools are closed, their children work in the quarries too, to help raise money to buy school uniforms.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- This is actually going to be a looping video of the rock quarry -->
+      <video class="background-video" loop muted autoplay playsinline preload>
+        <source src="loopingvideos/RockQuarryLoop.mp4" type="video/mp4">
+      </video>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <!--Section break here ask Carlos, probably taken care of with the rock quarry loop?----->
+            <p>
+              Shaame Hamisi bought the pieces of land that his two brick houses sit on in Kichaka Mkwaju – one for each of his two families – and he built the houses. He also has a farm. But he cannot legally claim ownership of the property because the ownership documents are in the names of his wives, who are Kenyan. “I don’t have anything,” Hamisi says. Because they lack national identity documents, stateless people in Kenya cannot obtain property ownership documents. Many stateless people are squatters. Some rent houses while others live on land belonging to Kenyan communities on the goodwill of those communities.
+            </p>
+            <p>
+              Still, they have to rely on the help of Kenyans to get construction permits, to get into tenant agreements and to get their houses connected to utilities such as water, because the processes for these require IDs too. Those who do have property, but do not have Kenyan spouses, may choose to register their property in the names of other Kenyans, friend perhaps, but have the risk of these other people taking the property from them. Haki Centre’s Phelix Lore narrates the story of a stateless man from the Makonde community, who are no longer stateless now, who married a Kenyan woman and registered a house in her name and had a bank account in her name too. But then one day the wife evicted him from the house, saying he did not belong there, that her “husband” was coming and so he had to leave. The person tried to seek legal advice but he was unsuccessful because he could not prove ownership of the house or the money in the bank.
+            </p>
+            <p>
+              Even acquiring something as simple as a mobile phone number, a stateless person has to register in another person’s name, because you need a national ID to do this. Kenya is a global leader in mobile money transfer, but stateless people have to be street smart to enjoy this service. When Hamisi receives money in his mobile phone account, he has to ask his wife to take him to withdraw it at an agent shop. Because the number he uses is registered in her name and she therefore needs to produce her national ID in order to get him the money.
+            </p>
+            <p>
+              “We want to become citizens, so we can get documents, just like the other people,” says Shaame.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              It is Republic Day 2018 in Kenya. At a school playground ground in Ramisi, a small town in Kwale, the local celebration is taking place. Hundreds of local residents are sitting on plastic chairs under tents, listening to speeches and watching performances on one side of the field to celebrate Kenya becoming a republic after gaining independence from Britain. The Kenyan flag flies high on a pole situated on the green between the audience and the speakers and performers, behind them a tent with government officials in uniform. Among the audience are members of current stateless communities – the Pemba, the Rundi and Rwandese people. Nasri Mohamed, a 33-year-old Kenyan man of Pemba descent, is one of them. He has traveled here more than 100 miles from his home in Watamu, Kilifi. Mohamed, a chubby, big-bellied man, is a large-scale fisherman. He is planning a fishing expedition in Lamu, a town 300 miles north of here. For this, he needs other fishermen from the Pemba community. Mohamed has a national ID because his mother is Kenyan.
+            </p>
+            <p>
+              But the other fishermen he needs for the expedition are stateless. They do not have identity documents. In Kenya, insecurity in some parts of the country means it is sometimes difficult to move from one place to another without some form of identification. There are many security checkpoints, especially in border areas – Kwale borders Tanzania and Lamu borders Somalia – and failure to identify yourself can usually result in arrest. To avoid these checkpoints, some people travel by sea. So besides taking part in the celebration, Mohamed is here to consult Shaame Hamisi, the leader of the Pemba, on how to approach this to ensure the safe return of the people - “because these people have families,” he says. Mohamed has a letter from a local government administrator, a chief, that the other fishermen can present to government officers, police and the military. Because of Lamu’s proximity to Somalia, and the threat of the Shabaab terrorist group, some checkpoints there are manned by soldiers – but he is not sure that the letter is enough to make the fishermen get through the checkpoints.
+          </div>
+        </div>
+      </div>
+      <!-- This is a photo of Nasri Mohamed, but may become a short video of him-->
+      <figure>
+        <img src="photos/Nasri-Mohamed-2019.jpg" class="img-fluid d-block">
+        <figcaption>Nasri Mohamed, a member of the Pemba community, speaks about why he attended Jamhuri (Republic) Day. (Photo: Drew Costley) </figcaption>
+      </figure>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              A month later, we meet Mohamed in his hometown of Watamu, at the same fish shop where Omar Hamadi, who is his cousin, sells fish. Mohamed owns the shop (He is a citizen and can get a business permit.). Mohamed, in a noticeably oversized white T-shirt with its sleeves past his elbows, tells us he now has more letters from government administrators and the fishermen traveled to Lamu where they are now doing the fishing.
+            </p>
+            <p>
+              One of the letters, from a deputy county commissioner, lists the names of five fishermen and says: “These are the descendants of the early immigrants from Pemba and are recognized by the government of Kenya only that they are yet to be issued with ID cards and the process is ongoing for them to get the IDs. Their main activity is fishing.... Please assist them where necessary.”
+            </p>
+            <p>
+              Even traveling long distances in ordinary means is a challenge for stateless people. Many bus companies ask for identification when booking tickets, and for the country’s train and airline services, it is mandatory.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Omar Hamadi remembers the exact figure: KSh369,700 ($3,697). Over a few months in 2014, he supplied consignments of fish worth that much to a hotel in Watamu. For payment, the hotel needed a national ID number. Hamadi did not have one because he is stateless. So he nominated a Kenyan who lived in the same area, and who worked at the hotel to receive the money on his behalf. But the person disappeared with the money and Hamadi has not seen him since. “I chose him because I trusted him,” Hamadi says, even though he admits the person was not his friend.
+            </p>
+            <p>
+              Statelessness causes a lot of financial challenges. Since stateless people cannot open bank accounts, because they lack identity documents, those like Hamadi who do business with companies that do not pay in cash are forced to have money go through someone else, a risky approach depending on the trustworthiness of the other person. Restriction to banking also means stateless people cannot keep savings in financial institutions or get loans to expand their businesses. Lack of IDs also denies women access to informal cooperative societies known as chamas that offer loans and that are very popular among women in Kenya.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Problems abound, tied to the lack of the all-important identification cards. This forces stateless people to live in the shadows of their Kenyan neighbors.</p>
+          </div>
+        </div>
+      </div>
+      <!-- This is a photo of Wanja Munaita-->
+      <figure>
+        <img src="photos/wanja-munaita-UNHCR-2019.JPG" class="img-fluid d-block">
+        <figcaption>Wanja Munaita of UNHCR Kenya speaks to a group of Pemba at an event revealing the results of a survey of the Pemba community. (Photo: Carlos Mureithi) </figcaption>
+      </figure>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Kenya has a national healthcare insurance plan but stateless people cannot access it. And recently, according to UNHCR’s Wanja Munaita, there have been two cases of stateless people being detained in public hospitals – in Nairobi and in the central Kenya county of Kiambu – over bills because they were asked to pay higher bills as “non-Kenyans” since they did not have national IDs. Some stateless people opt to go to more expensive private hospitals instead.
+            </p>
+            <p>
+              It is also difficult for them to get help in government offices or even enter them because one of the first things officials ask for is an ID to record their details. “It’s not easy,” Hamadi says. “In fact, we don’t go.”
+            </p>
+            <p>
+              Perhaps the most personal product of statelessness is ridicule of stateless people by the Kenyan nationals they live with in in their communities – at school and in neighborhoods. There is a feeling among nationals that stateless people are outsiders who do not belong, and when there is conflict between the two groups. It is common to hear comments that the stateless people should go back to “their home.” “It is like they are insulting us,” says Hamadi, who, like all the other Pemba I spoke to, have never been to the Pemba island.
+            </p>
+            <p>
+              Sometimes tensions escalate to abuse and get to physical levels, but the Pemba do not bother reporting them to the police because the police would ask them for identification.
+            </p>
+            <p>
+              “We experience so many challenges, to be honest,” Hamadi says, “but we are enduring them, because, we do not have anywhere else to go.”
+            </p>
+            <p>
+              There is a general fear and mistrust of authorities among stateless people. When the government’s statistics body or human rights organizations go out to collect information from them, some stateless people do not come out to participate for fear that they are gathering the information in order to expel them from Kenya. This makes it difficult to know the population of stateless people in the country. Their fear and mistrust is mainly because they suffered a lot of harassment and threats of expulsion by the administration of Kenya’s second president, Daniel arap Moi, and because of continued threats by some local administrators today.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p class="p4">It took just two weeks for the Makonde to start getting registered for citizenship after President Kenyatta’s order at State House in 2016 after the walk. The Makonde got national IDs and other documents and could finally call Kenya their home.
+            </p>
+            <div class="w-50 mr-4 float-left">
+              <figure>
+                <img src="photos/nguliIDfront.jpg" class="img-fluid d-block">
+                <!--              <figcaption>Here is a caption for the right photo. </figcaption>-->
+              </figure>
+            </div>
+            <p>
+              The Makonde can now study beyond elementary school, legally operate businesses, prove ownership of property, move freely around the country and get affordable healthcare.
+            </p>
+            <p>
+              Thomas Nguli, the 62-year-old leader of the Makonde and the leader of the 2016 walk, walks out of his stony house in Mwabungo village in Kwale on a December afternoon. He is carrying a heavy black and dusty wooden carving and places it on the brown earth. Brown leaves from trees in his compound lie around and tall coconut trees stand nearby.
+            </p>
+            <div class="w-50 mr-4 float-right">
+              <figure>
+                <img src="photos/nguliIDback.jpg" class="img-fluid d-block">
+                <!--              <figcaption>Here is a caption for the right photo. </figcaption>-->
+              </figure>
+            </div>
+            <p>
+              At about four feet, the carving, made of ebony, is of very many shapes of people joined together. Nguli made it over three months in 2015. He calls it “Family”. On its base is his name, Nguli. Historically, the Makonde are known for carving, and Nguli’s carving work, which he has done for about 30 years, has enabled him take care of his family financially – he has one wife and five daughters. He hopes to sell this piece if someone wants it, but he has not done proper finishing on it yet.
+            </p>
+            <p>
+              Before he got citizenship, Nguli used to do carving on a local beach – tourists are the main market for such carvings – but many times authorities would chase him out because of lack of documentation. So he would instead use a middleman to sell his work. He would give him a photo of his art to use to look for customers. If someone bought the work, Nguli would give him a commission of 10%. But now Nguli can sell his work himself, freely.
+            </p>
+            <p>
+              “I used to pray to God that one day, he would make us live like other people,” Nguli, says later in a classroom in a church compound a short drive from his home. He is also a catechist.
+            </p>
+          </div>
+        </div>
+      </div>
+      <video class="background-video" loop muted autoplay playsinline preload>
+        <source src="loopingvideos/ThomasCarvingLoop.mp4" type="video/mp4">
+      </video>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              For Makonde youth, the gaining of citizenship gave them a lot of hope that they would now get jobs they could not get before because of the lack of national IDs. But after gaining citizenship, they find that their lack of post-elementary education is now haunting them. For many menial jobs in Kenya, the minimum requirement is a high school certificate. But Makonde youth did not go to high school, and this gives them a huge disadvantage in competing with Kenyans for jobs. As a result, they have ended up being jobless or doing temporary jobs.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Nguli’s daughter Esther is one such youth. Esther, 22, stands behind her niece TK, who is sitting on a yellow plastic chair. Esther’s fingers quickly and seemingly effortlessly move through TK’s black hair, a bracelet with the Kenyan flag on Esther’s right arm. It is a December morning in the Nguli compound and Esther is putting extensions on her niece’s hair. Esther, who looks five years younger, is a hairdresser. After elementary school, she joined a vocational center to study hairdressing.
+            </p>
+            <p>
+              Before getting citizenship, Esther had a difficult time finding a job because she did not have a national ID and had not gone to high school. As a result, she would do temporary menial jobs nearby. Now she has an ID, but she finds herself in the same desperate position she was in jobwise before she got citizenship. “We do not know what will happen now,” says Esther, a single mother of a one-and-a-half-year-old boy. She painfully remembers one time before citizenship when she got a job at a hotel and used a card that the Makonde had made for themselves for identification. After just one week, the hotel said it would not recognize that card, and she lost the job.
+            </p>
+          </div>
+        </div>
+      </div>
+      <!-- This is a photo of Nasri Mohamed, but may become a short video of him-->
+      <figure>
+        <img src="photos/esther-nguli-hair2019.JPG" class="img-fluid d-block">
+        <figcaption>Esther Nguli, a member of the Makonde community, takes a break while doing her neices hair. (Photo: Carlos Mureithi)</figcaption>
+      </figure>
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              Today, she still struggles to get a job. Sometimes she gets temporary work at a salon where she gets paid through commissions of 20 or 30% of the amount the customers whose hair she styles pays. Other times, like today, she styles people hair in their homes. But even these jobs are difficult to come by. “Till this day, when I think about my life, I blame myself a lot,” Esther says. “I say I wish I had all those things; today I could be a different person.” OR “I am trying every way but I cannot see hope,” Esther says. OR “Sometimes when I sit and think about these challenges, I just cry,” Esther says. “That is it. I do not know what to do; if the opportunity has gone, it has gone.” Esther dreams of opening her own salon.
+            </p>
+            <p>
+              Esther is a sixth-generation Kenyan Pemba. Her son and future generations of the Makonde will have the opportunity to improve their standards of living by taking advantage of opportunities that statelessness denied the previous generations.
+            </p>
+            <p>
+              Indeed, if the Pemba and other stateless communities gained citizenship now, they would also take time to catch up with people who have been citizens longer.
+            </p>
+            <p>
+              “They've been left behind. Totally left behind,” Munaita says about the stateless people.
+            </p>
+          </div>
+        </div>
+      </div>
+      <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+      <div class="container mt-5">
+        <div class="row justify-content-center">
+          <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <p>
+              On the day of the Republic Day celebration, Shaame Hamisi is a little anxious. He comes to the venue a few hours before the event starts with a contingent of fellow Pemba people from Kichaka Mkwaju – old and young, men and women. It is a big day for them. Hamisi, the leader of the Pemba people, has been officially invited to this national function. He has also been given an opportunity to speak to the hundreds of attendants and, importantly, the government officials present. The Pemba people have come early to rehearse their songs and dances because they are also set to perform at the event.
+            </p>
+            <p>
+              When Shaame’s turn to speak comes, he cuts a sad and emotional figure. Holding a microphone on his right arm and standing right in front of three seated government administrators in their well pressed, shiny khaki uniform, he gives an impassioned speech, crying for his people to be granted citizenship.
+            </p>
+            <p>
+              Kenyan citizens have two things to celebrate today, he says – Kenya becoming a republic and them being citizens – but the Pemba are only celebrating Kenya becoming a republic. “We have a lot of sadness,” he says. “Until now we still have not been lucky to get citizenship yet we are real Kenyans.”
+            </p>
+            <p>
+              Kenya still has some time to make the Pemba and other stateless people in the country citizens before the August 30 deadline. Doing so largely depends on the speed and commitment of the Directorate of Immigration and Registration of Persons. This agency is mandated with issuance of citizenship by coordinating a task force of many government departments and agencies and external bodies to identify stateless people, doing verification, taking their biometric data, making recommendations about their registration, and registering them. “The process is not an easy process,” says Alexander Muteshi, Kenya’s director of the immigration services. “And that's why you see it has taken quite long.” He notes that lack of enough data about stateless communities is a major challenge.
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="slideshow">
+        <div class='main-carousel'>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery01.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery02.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery03.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery04.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery05.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="/photogalleryphotos/statelessgallery06.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery07.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery08.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery09.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery10.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery12.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery13.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery14.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery15.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery16.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery17.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery18.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery19.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery20.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery21.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery22.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery23.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery24.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery25.JPG"></div>
+        </div>
+
+
+        <div class="container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+              <p>
+                Knowing the demographics of the stateless people is an important initial step for addressing statelessness. In 2016, UNHCR, carried out a survey of the Pemba people in partnership with the Kenya National Bureau of Statistics, Statistics Norway and Haki Centre. The survey looks at the numbers of the Pemba people, their characteristics and challenges, and what is preventing them from becoming citizens. The findings have not been published yet. UNHCR is looking to share them with the government to verify the information and to recommend the recognition and registration of the Pemba people as citizens.
+              </p>
+              <p>
+                For now, the stateless people continue to wait and hope for the day they will finally get recognition in a country they have lived their entire lives but that still treats them as strangers. They are accustomed to feeling they do not belong in Kenya. They live and die without legal records of their identities, as if they never existed, and without the chance to fulfil their potential because of lack of documentation.
+              </p>
+              <p>
+                “Sometimes you wonder why you were brought into this world,” Hamisi says. “‘Why? What did I come to do here?’ You think it would even be better then for God to get you out of this world.”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <script src="js/jquery-3.4.0.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
+        <script src="js/skrollr.min.js"></script>
+        <script src="js/leaflet/leaflet.js"></script>
+        <script src="js/flickity.pkgd.min.js"></script>
+
+
+        <script>
+          //initiate skrollr
+          var s = skrollr.init({
+            forceHeight: false
+          });
+
+          $('.main-carousel').flickity({
+            // options
+            cellAlign: 'left',
+            contain: true
+          });
+
+          if (s.isMobile()) {
+            $("#byline").css("visibility", "visible");
+          }
+
+          //jquery
+          jQuery(document).ready(function($) {
+
+
+            var timer;
+
+            $(window).on("resize", function() {
+
+              clearTimeout(timer);
+
+              timer = window.setTimeout(function() {
+                $('.juxtapose').attr('src', function(i, val) {
+                  return val;
+                });
+              }, 300);
+
+            });
+
+            $(window).on("scroll", function() {
+              $("#byline").css("visibility", "visible");
+            })
+
+            //modal code for lightbox
+            $('#lightbox').on('show.bs.modal', function(event) {
+              var button = $(event.relatedTarget); // Button that triggered the modal
+              var recipient = button.find("img").attr('src'); // Extract info from src.
+              var modal = $(this);
+              modal.find('.modal-body').html('<img src="' + recipient + '" class="img-fluid d-block">');
+            });
+
+
+            /****************
+              
+                  THIS IS WHERE YOU CAN EDIT THE MAP LAYERS.
+              
+                  ADJUST COLOR, WEIGHT (THICKNESS OF LINE) OR OPACITY
+              
+                  ****************/
+
+            var mapLineStyle = function(feature) {
+              switch (feature.properties.Name) {
+                case 'The Makonde':
+                  return {
+                    color: "#b2182b",
+                    weight: 10,
+                    opacity: 1
+                  };
+                case 'The Pemba':
+                  return {
+                    color: "#ef8a62",
+                    weight: 10,
+                    opacity: 1
+                  };
+                case 'The Rundi':
+                  return {
+                    color: "#fddbc7",
+                    weight: 10,
+                    opacity: 1
+                  };
+                case 'The Nubians':
+                  return {
+                    color: "#d1e5f0",
+                    weight: 10,
+                    opacity: 1
+                  };
+                case 'The Rwandese':
+                  return {
+                    color: "#67a9cf",
+                    weight: 10,
+                    opacity: 1
+                  };
+                case 'The Shona':
+                  return {
+                    color: "#2166ac",
+                    weight: 10,
+                    opacity: 1
+                  };
+              }
+            }
+
+            //style for all the markers (circles). Radius is the size.
+            var geojsonMarkerOptions = {
+              radius: 8,
+              fillColor: "#fff",
+              color: "#36454f",
+              weight: 2,
+              opacity: 1,
+              fillOpacity: 1
+            };
+
+            //It might be possible to modify this code below
+            //so that each marker looks different. 
+            var mapMarkerStyle = function(feature, latlng) {
+              switch (feature.properties.Name) {
+                case 'Kenya':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Mozambique':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Tanzania':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Burundi':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'South Sudan':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Rwanda':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+                case 'Zimbabwe':
+                  return L.circleMarker(latlng, geojsonMarkerOptions);
+              }
+            }
+
+
+
+
+            function onEachFeature(feature, layer) {
+              // does this feature have a property named popupContent?
+              if (feature.properties && feature.properties.Description) {
+                layer.bindPopup(feature.properties.Description).bindTooltip(feature.properties.Name);
+              }
+            }
+
+            //leaflet code
+            var leafletMap = L.map('map', {
+              scrollWheelZoom: false
+            }).setView([-5.769513, 36.032715], 5);
+
+            var Stamen_Toner = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
+              attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+              subdomains: 'abcd',
+              minZoom: 0,
+              maxZoom: 20,
+              ext: 'png'
+            }).addTo(leafletMap);
+
+            $.ajax({
+              url: "maps/pathstokenya.json",
+              dataType: "json"
+            }).done(function(data) {
+              L.geoJSON(data, {
+                style: mapLineStyle,
+                pointToLayer: mapMarkerStyle,
+                onEachFeature: onEachFeature
+              }).addTo(leafletMap);
+            });
+
+
+          });
+        </script>
+</body></html>

@@ -120,6 +120,9 @@
     figcaption {
       color: dimgrey;
     }
+      .main-carousel figcaption{
+          color: #ccc;
+      }
 
     /*
       .full-background-video-container{
@@ -778,10 +781,10 @@
       </div>
       <div class="slideshow">
         <div class='main-carousel'>
-          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery01.JPG"></div>
-          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery02.JPG"></div>
-          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery03.JPG"></div>
-          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery04.JPG"></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery01.JPG"><figcaption>something somethig</figcaption></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery02.JPG"><figcaption>something somethig</figcaption></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery03.JPG"><figcaption>something somethig</figcaption></div>
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery04.JPG"><figcaption>something somethig</figcaption></div>
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery05.JPG"></div>
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery06.JPG"></div>
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery07.JPG"></div>
@@ -833,7 +836,9 @@
           $('.main-carousel').flickity({
             // options
             cellAlign: 'left',
-            contain: true
+            contain: true,
+            adaptiveHeight: true,
+            imagesLoaded: true
           });
 
           if (s.isMobile()) {

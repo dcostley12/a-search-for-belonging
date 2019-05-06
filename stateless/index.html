@@ -25,7 +25,9 @@
   <meta property="og:image" content="" />
   <meta property="og:description" content="" />
   <style>
-    #hero1,
+    
+	  
+	#hero1,
     #hero2 {
       height: 100vh;
       width: 100vw;
@@ -36,7 +38,31 @@
       left: 0;
       z-index: -1;
     }
-
+	  
+	  @media (min-width:500px){
+		  #hero1, hero2 {
+			  height: 100vh;
+      		  width: 100vw;
+              background-size: cover;
+              background-position: center;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -1;	  
+		  }
+	  }
+	  
+	  @media (max-width:1000px) {
+		   #hero1, hero2 {
+			  height: 100vh;
+      		  width: 100vw;
+              background-size: cover;
+              background-position: center;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -1;	
+	  }
     /* Shaame */
     #hero1 {
       background-image: url(photos/shaameboat-resize.jpg);
@@ -60,6 +86,28 @@
       z-index: -5;
       font-family: Neuton, sans-serif;
     }
+      @media (min-width:500px){
+	      #hero3 {
+		   position: fixed;
+           top: 100px;
+           right: 100px;
+           transform: translate(500px, -50%);
+           z-index: -5;
+           font-family: Neuton, sans-serif;	   
+			   }  
+		  }
+	  }
+	  
+	  @media (max-width:1000px) {
+		   #hero3 {
+		   position: center;
+           top: 100px;
+           right: 2%;
+           transform: translate(500px, -50%);
+           z-index: -5;
+           font-family: Neuton, sans-serif;	
+			  
+		  }	
 
     #byline {
       position: fixed;
@@ -120,6 +168,23 @@
     figcaption {
       color: dimgrey;
     }
+	  @media (max-width:500px){
+	      figcaption {
+		  text-align: center;
+		  font-size: 100%; 
+	      padding-left: 10px;
+		  padding-right: 10px;
+			   }  
+		  }
+	
+	  
+	  @media (max-width:1000px) {
+		  figcaption {
+		   text-align: center;
+		   font-size: 70%;  
+		  }
+			  
+	 }	 
 
     .main-carousel figcaption {
       color: dimgrey;
@@ -149,7 +214,6 @@
     }
 
     .juxtapose {
-      width: 100vw;
       height: 80vw;
     }
 
@@ -294,7 +358,7 @@
     </div>
     <figure>
       <img src="photos/300-mile-walk-2016.jpg" class="img-fluid d-block">
-      <figcaption>Stateless people march to Kenya's State House in Nairobi in 2016. (Photo: Courtesy of the Kenya Human Rights Commission) </figcaption>
+		<figcaption><center>Stateless people march to Kenya's State House in Nairobi in 2016. (Photo: Courtesy of the Kenya Human Rights Commission) </center> </figcaption>
     </figure>
     <div class="container mt-5">
       <div class="row justify-content-center">
@@ -683,7 +747,7 @@
       <!-- This is a photo of Wanja Munaita-->
       <figure>
         <img src="photos/wanja-munaita-UNHCR-2019.JPG" class="img-fluid d-block">
-        <figcaption>Wanja Munaita of UNHCR Kenya speaks to a group of Pemba at an event revealing the results of a survey of the Pemba community. (Photo: Carlos Mureithi) </figcaption>
+		  <figcaption><center>Wanja Munaita of UNHCR Kenya speaks to a group of Pemba at an event revealing the results of a survey of the Pemba community. (Photo: Carlos Mureithi)</center></figcaption>
       </figure>
       <div class="container mt-5">
         <div class="row justify-content-center">

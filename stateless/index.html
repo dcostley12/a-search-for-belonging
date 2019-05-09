@@ -25,7 +25,9 @@
   <meta property="og:image" content="" />
   <meta property="og:description" content="" />
   <style>
-    #hero1,
+    
+	  
+	#hero1,
     #hero2 {
       height: 100vh;
       width: 100vw;
@@ -36,7 +38,34 @@
       left: 0;
       z-index: -1;
     }
-
+	  
+/*
+	  @media (min-width:500px){
+		  #hero1, hero2 {
+			  height: 100vh;
+      		  width: 100vw;
+              background-size: cover;
+              background-position: center;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -1;	  
+		  }
+	  }
+	  
+	  @media (max-width:1000px) {
+		   #hero1, hero2 {
+			  height: 100vh;
+      		  width: 100vw;
+              background-size: cover;
+              background-position: center;
+              position: fixed;
+              top: 0;
+              left: 0;
+              z-index: -1;	
+	  }
+*/
+        
     /* Shaame */
     #hero1 {
       background-image: url(photos/shaameboat-resize.jpg);
@@ -60,6 +89,30 @@
       z-index: -5;
       font-family: Neuton, sans-serif;
     }
+/*
+      @media (min-width:500px){
+	      #hero3 {
+		   position: fixed;
+           top: 100px;
+           right: 100px;
+           transform: translate(500px, -50%);
+           z-index: -5;
+           font-family: Neuton, sans-serif;	   
+			   }  
+		  }
+	  }
+	  
+	  @media (max-width:1000px) {
+		   #hero3 {
+		   position: center;
+           top: 100px;
+           right: 2%;
+           transform: translate(500px, -50%);
+           z-index: -5;
+           font-family: Neuton, sans-serif;	
+			  
+		  }	
+*/
 
     #byline {
       position: fixed;
@@ -120,6 +173,25 @@
     figcaption {
       color: dimgrey;
     }
+/*
+	  @media (max-width:500px){
+	      figcaption {
+		  text-align: center;
+		  font-size: 100%; 
+	      padding-left: 10px;
+		  padding-right: 10px;
+			   }  
+		  }
+	
+	  
+	  @media (max-width:1000px) {
+		  figcaption {
+		   text-align: center;
+		   font-size: 70%;  
+		  }
+			  
+	 }	 
+*/
 
     .main-carousel figcaption {
       color: dimgrey;
@@ -149,7 +221,6 @@
     }
 
     .juxtapose {
-      width: 100vw;
       height: 80vw;
     }
 
@@ -191,11 +262,11 @@
       <div id="hero2" data-0="transform:scale(1);opacity:1;" data-500="transform:scale(2);opacity:0;"></div>
 
       <!-- Shaame on boat -->
-      <div id="hero1" data-0="opacity:0;" data-800="opacity:1;" data-1000="opacity:0;"></div>
+      <div id="hero1" data-0="opacity:0;" data-800="opacity:1;" data-1200="opacity:0;"></div>
 
       <!-- Title text want to try this centered and coming up from the bottom of the viewport in this rendention -->
 
-      <div id="hero3" data-200="transform:translateX(500px);opacity:0;display:block;" data-500="transform:translateX(0px);opacity:1;" data-950="display:none;">
+      <div id="hero3" data-200="transform:translateX(500px);opacity:0;display:block;" data-500="transform:translateX(0px);opacity:1;" data-1150="display:none;">
         <h1>One Community’s Struggle to <br>
           Gain Kenyan Citizenship</h1>
       </div>
@@ -204,7 +275,7 @@
 
   <div id="skrollr-body">
     <div id="byline-container">
-      <div id="byline" data-anchor-target="#text-start" data-0="opacity:!0;" data-810="opacity:!1;" data-200-center-top="position:fixed;top:!50%;bottom:auto;" data-175-center-top="position:absolute;top:auto;bottom:!0;">
+      <div id="byline" data-anchor-target="#text-start" data-0="opacity:!0;" data-900="opacity:!1;" data-200-center-top="position:fixed;top:!50%;bottom:auto;" data-175-center-top="position:absolute;top:auto;bottom:!0;">
         <p class="byline">By Carlos Mureithi, Drew Costley and Amy Mostafa</p>
       </div>
     </div>
@@ -294,7 +365,7 @@
     </div>
     <figure>
       <img src="photos/300-mile-walk-2016.jpg" class="img-fluid d-block">
-      <figcaption>Stateless people march to Kenya's State House in Nairobi in 2016. (Photo: Courtesy of the Kenya Human Rights Commission) </figcaption>
+		<figcaption><center>Stateless people march to Kenya's State House in Nairobi in 2016. (Photo: Courtesy of the Kenya Human Rights Commission) </center> </figcaption>
     </figure>
     <div class="container mt-5">
       <div class="row justify-content-center">
@@ -475,6 +546,18 @@
         </div>
       </div>
     </div>
+           <hr style="height:1px; border:none; color:white; background-color:white; width:60%; text-align:center; margin: 5,0,0,0 auto;">
+    
+     <div class="container mt-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6">
+            <h2> Stateless People Survive by Living in the Shadows </h2>
+            <br>
+            <p class="p4">One hot afternoon in January, Rashid Juma, a 55-year-old stateless man from the Pemba community that is originally from present-day Tanzania, stands gently at a fish shop right next to a road in Watamu, a small coastal town and tourist resort in Kenya’s southeast. In a creamy taqiyah – a Muslim skullcap – grey shorts and brown, dusty open shoes, he is waiting for customers. Just outside the shop, a roughly built structure made of corrugated iron and wood, is Juma’s son, Hassan, a cheeky boy in a blue T-shirt and two wristbands on his left arm. It is a Wednesday, a school day, but Hassan is not in school. Instead, he is swiftly scaling fish and cutting them into pieces at this shop where his father sells fish, amid the noise of tuk-tuks and other vehicles passing by.
+            </p>
+        </div>
+      </div>
+    </div>
     <figure>
       <img src="photos/pemba-boy-2019.jpg" class="img-fluid d-block">
       <figcaption>A 13-year-old member of the Pemba community, cuts up fish at his father's shop. (Photo: Carlos Mureithi)</figcaption>
@@ -483,10 +566,6 @@
     <div class="container mt-5">
       <div class="row justify-content-center">
         <div class="col-12 col-sm-10 col-md-8 col-lg-6">
-          <h2> Stateless People Survive by Living in the Shadows </h2>
-          <br>
-          <p class="p4">One hot afternoon in January, Rashid Juma, a 55-year-old stateless man from the Pemba community that is originally from present-day Tanzania, stands gently at a fish shop right next to a road in Watamu, a small coastal town and tourist resort in Kenya’s southeast. In a creamy taqiyah – a Muslim skullcap – grey shorts and brown, dusty open shoes, he is waiting for customers. Just outside the shop, a roughly built structure made of corrugated iron and wood, is Juma’s son, Hassan, a cheeky boy in a blue T-shirt and two wristbands on his left arm. It is a Wednesday, a school day, but Hassan is not in school. Instead, he is swiftly scaling fish and cutting them into pieces at this shop where his father sells fish, amid the noise of tuk-tuks and other vehicles passing by.
-          </p>
           <p>
             Hassan is a little unwell, hence his absence from school today. He is here to learn how his father’s business works because he may end up doing this work himself in some years to come. Hassan is in the eighth grade, the final year of elementary school in Kenya and a stage where you have to take national exams to proceed to high school. One of the requirements to register for these exams is a birth certificate. Like all stateless people in Kenya, Hassan does not have a birth certificate, so he may not do the exam and his education may end at the eighth grade. He cannot get a birth certificate because in applying for one, his parents would have to provide supporting identity documents showing who they are. But as stateless people, they do not have any.
           </p>
@@ -567,7 +646,7 @@
       <video class="background-video" loop muted autoplay playsinline preload>
         <source src="loopingvideos/ShaameatSeaLoop-web.mp4" type="video/mp4">
       </video>
-     <figcaption>Shaame Hamisi, a fisherman and the leader of the Pemba, goes fishing. (Video: Drew Costley)</figcaption>
+      <figcaption>Shaame Hamisi, a fisherman and the leader of the Pemba, goes fishing. (Video: Drew Costley)</figcaption>
       <div class="container mt-5">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -598,7 +677,7 @@
       <video class="background-video" loop muted autoplay playsinline preload>
         <source src="loopingvideos/RockQuarryLoop-web.mp4" type="video/mp4">
       </video>
-        <figcaption>The rock quarry where members of the Pemba community work. (Video: Drew Costley)</figcaption>
+      <figcaption>The rock quarry where members of the Pemba community work. (Video: Drew Costley)</figcaption>
       <div class="container mt-5">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -675,7 +754,7 @@
       <!-- This is a photo of Wanja Munaita-->
       <figure>
         <img src="photos/wanja-munaita-UNHCR-2019.JPG" class="img-fluid d-block">
-        <figcaption>Wanja Munaita of UNHCR Kenya speaks to a group of Pemba at an event revealing the results of a survey of the Pemba community. (Photo: Carlos Mureithi) </figcaption>
+		  <figcaption><center>Wanja Munaita of UNHCR Kenya speaks to a group of Pemba at an event revealing the results of a survey of the Pemba community. (Photo: Carlos Mureithi)</center></figcaption>
       </figure>
       <div class="container mt-5">
         <div class="row justify-content-center">
@@ -723,9 +802,7 @@
               Thomas Nguli, the 62-year-old leader of the Makonde and the leader of the 2016 march, walks out of his stony house in Mwabungo village in Kwale on a December afternoon. He is carrying a heavy black and dusty wooden carving and places it on the earth. Brown leaves lie around and tall coconut trees stand nearby.
             </p>
             <div class="w-50 mr-4 float-right">
-              <figure>
                 <img src="photos/nguliIDback.jpg" class="img-fluid d-block">
-              </figure>
             </div>
             <p>At about four feet, the carving, made of ebony, is of black shapes of people joined together. Nguli made it over three months it in 2015. He calls it "Family." Carved on its base is his name, Nguli. Historically, the Makonde are known for carving, and Nguli’s carving work, which he has done for about 30 years, has enabled him take care of his family financially – he has one wife and five daughters. He hopes to sell this piece, but he has not done a proper finishing on it yet.
             </p>
@@ -743,7 +820,7 @@
       <video class="background-video" loop muted autoplay playsinline preload>
         <source src="loopingvideos/ThomasCarvingLoop-web.mp4" type="video/mp4">
       </video>
-    <figcaption>Thomas Nguli, leader of the Makonde, works on his carving. (Video: Drew Costley)</figcaption>
+      <figcaption>Thomas Nguli, leader of the Makonde, works on his carving. (Video: Drew Costley)</figcaption>
       <div class="container mt-5">
         <div class="row justify-content-center">
           <div class="col-12 col-sm-10 col-md-8 col-lg-6">
@@ -828,9 +905,11 @@
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery10.JPG">
             <figcaption>Hamadi Rashid, a stateless Pemba man, at a rock quarry where he works in Kichaka Mkwaju. (Photo: Carlos Mureithi)</figcaption>
           </div>
+<!--
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery11.JPG">
             <figcaption>Hasda Rashid, a stateless Pemba woman, at a rock quarry where she works in Kichaka Mkwaju. (Photo: Carlos Mureithi)</figcaption>
           </div>
+-->
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery12.JPG">
             <figcaption>Stateless Pemba women in Kichaka Mkwaju. Photo: Carlos Mureithi)</figcaption>
           </div>
@@ -855,7 +934,7 @@
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery19.JPG">
             <figcaption> Members of the Eleven Brothers soccer team on their practice ground in Kichaka Mkwaju. They are stateless. (Photo: Carlos Mureithi)</figcaption>
           </div>
-          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/21.JPG">
+          <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/statelessgallery21.JPG">
             <figcaption>Stateless Pemba women dance to traditional music in Kichaka Mkwaju. (Photo: Carlos Mureithi)</figcaption>
           </div>
           <div class='carousel-cell'><img class="img-fluid" src="./photogalleryphotos/new.JPG">
